@@ -12,7 +12,6 @@ public class transformScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wagons = GameObject.FindGameObjectsWithTag("Wagon");
     }
 
     // Update is called once per frame
@@ -50,11 +49,11 @@ public class transformScript : MonoBehaviour
         Vector3 mov = new Vector3();
         if (Input.GetKey(KeyCode.A))
         {
-            mov.x = 1.0f;
+            mov.x = -1.0f;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            mov.x = -1.0f;
+            mov.x = 1.0f;
         }
         transform.Translate(mov * speed * Time.deltaTime);
     }

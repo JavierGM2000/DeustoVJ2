@@ -6,7 +6,7 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     private Rigidbody riggidB;
-    
+    private bool canJump;
     [SerializeField]
     public float jumpForce;
     
@@ -15,14 +15,21 @@ public class Mover : MonoBehaviour
     void Start()
     {
         riggidB = GetComponent<Rigidbody>();
+        canJump = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (canJump && Input.GetKeyDown(KeyCode.W))
         {
             riggidB.AddForce(new Vector3(0, jumpForce, 0));
+            canJump = false;
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        canJump = true;
     }
 }
