@@ -7,7 +7,7 @@ public class transformScript : MonoBehaviour
     int dir = 1;
     int drops = 0;
     GameObject[] wagons;
-    float speed = 2.0f;
+    float speed = 5.0f;
     float rotateSpeed = 90.0f;
     // Start is called before the first frame update
     void Start()

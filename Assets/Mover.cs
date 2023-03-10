@@ -30,12 +30,13 @@ public class Mover : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
+        //La layer con id 3 es ground
         if (collision.gameObject.layer == 3)
         {
             canJump = true;
         }
-        
-        if (collision.gameObject.name == "DeathStar")
+        //La layer con id 6 son objetos que matan al jugador
+        if (collision.gameObject.layer == 6)
         {
             //quitamos la camara como hijo del objeto
             transform.DetachChildren();
