@@ -47,4 +47,13 @@ public class Mover : MonoBehaviour
     {
         canJump = false;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("TriggerEnter");
+        if (other.gameObject.tag == "Agrandar")
+        {
+            transform.localScale *= 2;
+        }
+    }
 }
