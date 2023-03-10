@@ -24,12 +24,16 @@ public class Mover : MonoBehaviour
         if (canJump && Input.GetKeyDown(KeyCode.W))
         {
             riggidB.AddForce(new Vector3(0, jumpForce, 0));
-            canJump = false;
+            
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         canJump = true;
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        canJump = false;
     }
 }
