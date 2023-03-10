@@ -28,9 +28,13 @@ public class Mover : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
-        canJump = true;
+        if (collision.gameObject.layer == 3)
+        {
+            canJump = true;
+        }
+        
         if (collision.gameObject.name == "DeathStar")
         {
             //quitamos la camara como hijo del objeto
